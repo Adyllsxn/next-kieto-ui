@@ -1,3 +1,0 @@
-type MenuProps = {
-    onClose: () => void
-}

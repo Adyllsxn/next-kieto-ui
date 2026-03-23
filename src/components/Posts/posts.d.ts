@@ -1,3 +1,0 @@
-type PostsProps ={
-    posts: PostProps[]
-}
