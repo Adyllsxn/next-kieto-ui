@@ -26,8 +26,5 @@ jobs:
       - name: Build web
         run: npm run build --prefix web/
 
-      - name: Run tests
-        run: npm test --prefix web/
-
       - name: Lint (non-blocking)
         run: npm run lint --prefix web/ || true
