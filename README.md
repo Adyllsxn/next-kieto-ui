@@ -1,7 +1,7 @@
 # 🎨 NEXT-KIETO-UI
 
-This project is a **Next.js application** focused on building **clean, modern, and reusable UI components**.  
-The goal is to practice **frontend architecture**, explore **design system patterns**, and deliver a refined visual experience for study and portfolio purposes.
+This project is a **Next.js application** focused on building a **modern and reusable dashboard interface**.  
+The goal is to practice **clean frontend architecture**, explore **intuitive design system patterns**, and deliver a refined visual experience for study and portfolio purposes.
 
 ---
 
