@@ -41,7 +41,7 @@ The goal is to practice **clean frontend architecture**, explore **intuitive des
 ---
 
 ## 📸 Demo
-*(add screenshots or GIFs showcasing the UI in action)*
+![Demo](./docs/assets/demo.png "Visual Demo")
 
 ---
 
