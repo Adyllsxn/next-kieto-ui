@@ -1,25 +1,49 @@
 // app/(dashboard)/page.tsx
-import { StatsCard } from '@/components/dashboard/StatsCard'
-import { RecentTransactions } from '@/components/dashboard/RecentTransactions'
-import { stats } from '@/lib/data/stats'
+'use client'
+
+import { useState, useEffect } from 'react'
+import { StatsCards } from './_components/StatsCards'
+import { SalesChart, VisitorsChart } from './_components/Charts'
+import { RecentActivity } from './_components/RecentActivity'
+import { DashboardSkeleton } from './_components/DashboardSkeleton'
+import { statsData, recentActivities } from '@/lib/data/dashboard'
 
 export default function DashboardPage() {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 1500)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (loading) {
+    return <DashboardSkeleton />
+  }
+
   return (
     <div className="space-y-6">
+      {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold">Good morning, Alex</h1>
-        <p className="text-gray-600 mt-1">Here&apos;s what&apos;s happening with your business today.</p>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Dashboard</h1>
+        <p className="text-gray-500 dark:text-gray-400 mt-1">
+          Bem-vindo de volta! Aqui está o resumo do seu sistema.
+        </p>
       </div>
-      
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map((stat) => (
-          <StatsCard key={stat.title} {...stat} />
-        ))}
+
+      {/* Stats Cards */}
+      <StatsCards stats={statsData} />
+
+      {/* Charts Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <SalesChart />
+        <VisitorsChart />
       </div>
-      
-      {/* Recent Transactions */}
-      <RecentTransactions />
+
+      {/* Recent Activity */}
+      <RecentActivity activities={recentActivities} />
     </div>
   )
 }
