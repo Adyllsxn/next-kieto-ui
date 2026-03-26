@@ -19,8 +19,8 @@ web/                      # Next.js project
     ├─ public/            # Static assets (images, icons, fonts)
     ├─ src/               # Source code
     │   ├─ app/           # Routes and layouts (App Router)
-    │   ├─ assets/        # Images used in the UI
-    │   └─ components/    # Reusable UI library
+    │   ├─ components/    # Images used in the UI
+    │   └─ lib/           # Reusable UI library
     ├─ .gitignore         # Files/folders to ignore in Git
     ├─ components.json    # Components configuration (if used)
     ├─ eslint.config.mjs  # ESLint configuration
